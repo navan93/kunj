@@ -32,7 +32,7 @@ void setup()
 
 
   // put your setup code here, to run once:
-  web_server_init(web_server_cb_handler);
+  web_server_init(&web_server_cb_handler);
 }
 
 void loop() 

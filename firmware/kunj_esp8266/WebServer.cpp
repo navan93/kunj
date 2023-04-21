@@ -7,7 +7,7 @@
 
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
-static void* app_cb = NULL;
+static web_server_app_cb app_cb = NULL;
 static bool water_valve_state;
 
 const char* PARAM_INPUT_1 = "output";
@@ -68,7 +68,7 @@ String processor(const String& var){
 }
 
 
-void web_server_init(void* app_cb_handler)
+void web_server_init(web_server_app_cb app_cb_handler)
 {
   app_cb = app_cb_handler;
   water_valve_state = false;
