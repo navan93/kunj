@@ -33,3 +33,5 @@
 
 # Specific files
 wifi_credentials.h
+.DS_Store
+build/

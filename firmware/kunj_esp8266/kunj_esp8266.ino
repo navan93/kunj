@@ -7,7 +7,11 @@
 #include <TimeLib.h>
 #include <TimeAlarms.h>
 
+#define WATERING_DURATION_S 30
+
 RTC_DS3231 rtc;
+static const char *ssid = APSSID;
+static const char *password = APPSK;
 
 static void web_server_cb_handler(bool pin_state)
 {
@@ -77,7 +81,7 @@ void start_drip_irrigation(void)
 {
   digitalWrite(VALVE_CTRL_PIN, HIGH);
   Serial.println("Starting drip irrigation");
-  Alarm.timerOnce(60, stop_drip_irrigation);  
+  Alarm.timerOnce(WATERING_DURATION_S, stop_drip_irrigation);  
 }
 
 void stop_drip_irrigation(void)
